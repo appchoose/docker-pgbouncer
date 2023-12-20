@@ -67,7 +67,7 @@ if [ ! -f ${PG_CONFIG_DIR}/pgbouncer.ini ]; then
 ################## Auto generated ##################
 [databases]
 ${DB_NAME:-*} = host=${DB_HOST:?"Setup pgbouncer config error! You must set DB_HOST env"} \
-port=${DB_PORT:-5432} user=${DB_USER:-postgres}
+port=${DB_PORT:-5432} auth_user=${DB_USER:-postgres}
 ${CLIENT_ENCODING:+client_encoding = ${CLIENT_ENCODING}\n}\
 
 [pgbouncer]
@@ -94,6 +94,7 @@ ignore_startup_parameters = ${IGNORE_STARTUP_PARAMETERS:-extra_float_digits}
 ${DISABLE_PQEXEC:+disable_pqexec = ${DISABLE_PQEXEC}\n}\
 ${APPLICATION_NAME_ADD_HOST:+application_name_add_host = ${APPLICATION_NAME_ADD_HOST}\n}\
 ${TIMEZONE:+timezone = ${TIMEZONE}\n}\
+${MAX_PREPARED_STATEMENTS:+max_prepared_statements = ${MAX_PREPARED_STATEMENTS}\n}\
 
 # Log settings
 ${LOG_CONNECTIONS:+log_connections = ${LOG_CONNECTIONS}\n}\
