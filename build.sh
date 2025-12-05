@@ -1,4 +1,4 @@
-VERSION=1.25.0
+VERSION=1.25.1
 
 if [ -z "$REGISTRY" ]; then
   echo "Erreur: La variable REGISTRY est vide ou non définie"
